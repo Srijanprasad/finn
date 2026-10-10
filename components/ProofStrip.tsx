@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Info, ChevronDown, TrendingUp, GitCompare, ArrowDownRight } from "lucide-react";
+import { Info, ChevronDown } from "lucide-react";
 import { PROOF_STATS } from "@/lib/content";
 
 export function ProofStrip() {
@@ -13,47 +13,52 @@ export function ProofStrip() {
 
   return (
     <section
-      className="bg-navy py-16 sm:py-20 border-y border-navy-border relative"
+      className="bg-nocturne py-16 sm:py-20 border-b border-hairline-dark relative text-white"
       aria-label="Empirical Market Proof"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section kicker */}
-        <div className="mb-10 text-center sm:text-left flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+        {/* Section Header */}
+        <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-hairline-dark pb-6">
           <div>
-            <span className="text-[10px] font-mono tracking-widest text-gold uppercase">
-              Empirical Foundations
+            <span className="text-[10px] font-mono tracking-widest text-aurum-light uppercase font-semibold">
+              Historical Verification
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif text-copy-primary mt-1">
+            <h2 className="text-2xl sm:text-3xl font-serif font-normal text-white mt-1">
               The Math of Staying Invested
             </h2>
           </div>
-          <p className="text-xs text-copy-secondary max-w-md">
-            Unvarnished historical data reflecting the difference between market noise and generational wealth creation.
+          <p className="text-xs text-slate-400 max-w-md leading-relaxed">
+            Unvarnished market records across 26 years demonstrating the compounding penalty of premature discontinuation.
           </p>
         </div>
 
-        {/* 3 Proof Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* 3-Column Architectural Ledger (No floating cards) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-hairline-dark">
           {PROOF_STATS.map((stat, index) => {
             const isMethodologyOpen = openMethodology === index;
 
             return (
               <div
                 key={stat.numeral}
-                className="card-glass p-6 sm:p-7 flex flex-col justify-between relative group hover:border-gold/40 transition-all duration-300 shadow-lg"
+                className={`py-8 md:py-0 ${
+                  index === 0
+                    ? "md:pr-8"
+                    : index === 1
+                    ? "md:px-8"
+                    : "md:pl-8"
+                } flex flex-col justify-between`}
               >
                 <div>
-                  {/* Top card header with tiny inline SVG visual */}
+                  {/* Top Bar with Number & Tiny Graphic */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono font-medium text-gold/90 px-2 py-0.5 rounded bg-gold/10 border border-gold/20">
-                      Case Study {index + 1}
+                    <span className="text-[10px] font-mono tracking-widest text-aurum-light uppercase">
+                      Study 0{index + 1}
                     </span>
 
-                    {/* Tiny inline SVG visual based on stat */}
-                    <div className="w-16 h-8 text-gold flex items-center justify-end" aria-hidden="true">
+                    {/* Tiny inline SVG visual */}
+                    <div className="w-16 h-7 text-aurum-light flex items-center justify-end" aria-hidden="true">
                       {index === 0 && (
-                        // Nifty multi-decade curve with dips
-                        <svg viewBox="0 0 64 28" fill="none" className="w-full h-full stroke-gold stroke-[2]">
+                        <svg viewBox="0 0 64 28" fill="none" className="w-full h-full stroke-aurum-light stroke-[1.8]">
                           <path
                             d="M2 24 L12 18 L18 22 L28 10 L34 20 L44 8 L50 14 L62 2"
                             strokeLinecap="round"
@@ -62,17 +67,13 @@ export function ProofStrip() {
                         </svg>
                       )}
                       {index === 1 && (
-                        // Divergence curve (staying vs quitting)
                         <svg viewBox="0 0 64 28" fill="none" className="w-full h-full">
-                          {/* Abandoned line */}
-                          <path d="M2 24 L18 23 L32 23 L62 23" stroke="#B4533F" strokeWidth="1.5" strokeDasharray="3 3" />
-                          {/* Compounding line */}
-                          <path d="M2 24 L18 23 L32 18 L48 10 L62 3" stroke="#C5A059" strokeWidth="2.5" strokeLinecap="round" />
+                          <path d="M2 24 L18 23 L32 23 L62 23" stroke="#B64E3A" strokeWidth="1.5" strokeDasharray="3 3" />
+                          <path d="M2 24 L18 23 L32 18 L48 10 L62 3" stroke="#BF9748" strokeWidth="2.2" strokeLinecap="round" />
                         </svg>
                       )}
                       {index === 2 && (
-                        // 50% erosion halving curve
-                        <svg viewBox="0 0 64 28" fill="none" className="w-full h-full stroke-chart-cashDrag stroke-[2]">
+                        <svg viewBox="0 0 64 28" fill="none" className="w-full h-full stroke-chart-cashDrag stroke-[1.8]">
                           <path
                             d="M2 4 C18 4, 30 14, 62 24"
                             strokeLinecap="round"
@@ -83,30 +84,30 @@ export function ProofStrip() {
                     </div>
                   </div>
 
-                  {/* Large Serif Numeral */}
-                  <div className="mb-2">
-                    <div className="text-3xl sm:text-4xl lg:text-[2.6rem] font-serif font-normal text-copy-primary tracking-tight tabular-nums">
+                  {/* Large Serif Metric */}
+                  <div className="mb-3">
+                    <div className="text-3xl sm:text-4xl lg:text-[2.6rem] font-serif font-normal text-white tracking-tight tabular-nums">
                       {stat.numeral}
                     </div>
-                    <div className="text-xs font-mono uppercase tracking-wider text-gold mt-1">
+                    <div className="text-xs font-mono uppercase tracking-wider text-aurum-light mt-1 font-semibold">
                       {stat.label}
                     </div>
                   </div>
 
-                  {/* Contextual Description */}
-                  <p className="text-xs sm:text-sm text-copy-secondary leading-relaxed mt-3">
+                  {/* Context */}
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-2">
                     {stat.context}
                   </p>
                 </div>
 
-                {/* Bottom Source & Methodology Disclosure */}
-                <div className="mt-6 pt-4 border-t border-navy-border/60">
-                  <div className="flex items-center justify-between text-[11px] text-copy-muted">
-                    <span className="font-mono">Source: {stat.source}</span>
+                {/* Methodology Accordion */}
+                <div className="mt-6 pt-4 border-t border-hairline-dark/80">
+                  <div className="flex items-center justify-between text-[11px] text-slate-400">
+                    <span className="font-mono truncate max-w-[170px]">Source: {stat.source}</span>
                     <button
                       type="button"
                       onClick={() => toggleMethodology(index)}
-                      className="inline-flex items-center gap-1 text-gold hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold rounded"
+                      className="inline-flex items-center gap-1 text-aurum-light hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-aurum rounded"
                       aria-expanded={isMethodologyOpen}
                       aria-controls={`methodology-${index}`}
                     >
@@ -120,11 +121,10 @@ export function ProofStrip() {
                     </button>
                   </div>
 
-                  {/* Collapsible Methodology Text */}
                   {isMethodologyOpen && (
                     <div
                       id={`methodology-${index}`}
-                      className="mt-3 p-3 rounded bg-navy-surface border border-navy-border text-[11px] text-copy-secondary leading-normal animate-in fade-in duration-150"
+                      className="mt-3 p-3 rounded bg-nocturne-surface border border-hairline-dark text-[11px] text-slate-300 leading-normal animate-in fade-in duration-150"
                     >
                       {stat.methodology}
                     </div>

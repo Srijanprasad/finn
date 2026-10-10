@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Phone, Mail, ShieldAlert } from "lucide-react";
 import { SITE_METADATA, COMPLIANCE_DISCLOSURES } from "@/lib/content";
 
@@ -10,18 +11,18 @@ interface FooterProps {
 
 export function Footer({ onOpenBooking }: FooterProps) {
   return (
-    <footer className="bg-obsidian-deep border-t border-navy-border pt-16 pb-24 text-copy-secondary">
+    <footer className="bg-charcoal-deep border-t border-hairline-dark pt-16 pb-24 text-slate-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* Closing CTA Banner */}
-        <div className="rounded-card p-8 sm:p-12 bg-gradient-to-r from-navy via-[#162540] to-navy border border-navy-border shadow-2xl flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        {/* Closing CTA Institutional Invitation */}
+        <div className="rounded-card p-8 sm:p-12 bg-charcoal border border-hairline-dark shadow-darkCard flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="max-w-xl space-y-2">
-            <span className="text-[10px] font-mono tracking-widest text-gold uppercase">
+            <span className="text-[10px] font-mono tracking-widest text-aurum-light uppercase font-semibold">
               Begin A Structured Relationship
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-white font-normal">
               Ready for a considered conversation?
             </h2>
-            <p className="text-sm text-copy-secondary">
+            <p className="text-sm text-slate-300 leading-relaxed">
               A private dialogue with an experienced wealth architect. We respond within one working day.
             </p>
           </div>
@@ -30,15 +31,15 @@ export function Footer({ onOpenBooking }: FooterProps) {
             <button
               type="button"
               onClick={onOpenBooking}
-              className="btn-gold px-6 py-3.5 text-sm font-semibold flex items-center justify-center gap-2 group whitespace-nowrap"
+              className="btn-aurum px-6 py-3.5 text-xs font-medium flex items-center justify-center gap-2 group whitespace-nowrap"
             >
               <span>Schedule Portfolio Review</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
             </button>
 
             <Link
               href="/contact.html"
-              className="btn-secondary px-5 py-3.5 text-sm font-medium flex items-center justify-center gap-2 text-center whitespace-nowrap hover:border-gold"
+              className="btn-outline-dark px-5 py-3.5 text-xs font-medium flex items-center justify-center gap-2 text-center whitespace-nowrap"
             >
               <span>Contact our consultant</span>
             </Link>
@@ -46,49 +47,42 @@ export function Footer({ onOpenBooking }: FooterProps) {
         </div>
 
         {/* 3-Column Footer Directory */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pt-8 border-t border-navy-border/60">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pt-8 border-t border-hairline-dark/80">
           {/* Brand & Direct Contact (4 cols) */}
           <div className="md:col-span-4 space-y-4">
             <Link
               href="/"
-              className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold rounded p-1 w-fit"
+              className="block relative h-9 w-[150px] sm:h-10 sm:w-[160px] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-aurum rounded"
             >
-              <div className="w-9 h-7 text-gold">
-                <svg viewBox="0 0 214 120" fill="currentColor" className="w-full h-full">
-                  <path d="M79 21 a20 20 0 0 1 0 40" fill="none" stroke="currentColor" strokeWidth="14" />
-                  <path d="M175.7 27.4 A40 40 0 1 0 180.6 83.7" fill="none" stroke="currentColor" strokeWidth="17" />
-                  <polygon points="196,15 170,22 189,41" fill="currentColor" />
-                </svg>
-              </div>
-              <div>
-                <span className="font-serif tracking-wider text-base font-semibold text-white">
-                  PROSPAR
-                </span>
-                <span className="block text-[8px] font-mono tracking-widest uppercase text-copy-muted">
-                  Consulting LLP
-                </span>
-              </div>
+              {/* Authentic light version of the new logo */}
+              <Image
+                src="/assets/Logo-white.png"
+                alt="Prospar Consulting LLP"
+                fill
+                sizes="(max-width: 640px) 150px, 160px"
+                className="object-contain object-left"
+              />
             </Link>
 
-            <p className="text-xs text-copy-secondary leading-relaxed max-w-sm">
+            <p className="text-xs text-slate-400 leading-relaxed max-w-sm pt-2">
               {SITE_METADATA.tagline}
             </p>
 
-            <div className="pt-2 space-y-2 text-xs font-mono text-copy-muted">
+            <div className="pt-2 space-y-2 text-xs font-mono text-slate-400">
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-gold" />
+                <Phone className="w-3.5 h-3.5 text-aurum-light" />
                 <a
                   href={`tel:${SITE_METADATA.telephone}`}
-                  className="hover:text-gold transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   {SITE_METADATA.telephoneDisplay}
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-gold" />
+                <Mail className="w-3.5 h-3.5 text-aurum-light" />
                 <a
                   href={`mailto:${SITE_METADATA.email}`}
-                  className="hover:text-gold transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   {SITE_METADATA.email}
                 </a>
@@ -96,12 +90,12 @@ export function Footer({ onOpenBooking }: FooterProps) {
             </div>
           </div>
 
-          {/* Explore Links Grid (5 cols) */}
+          {/* Explore Links Directory (5 cols) */}
           <div className="md:col-span-5">
-            <h3 className="text-xs font-mono uppercase tracking-widest text-gold font-semibold mb-4">
+            <h3 className="text-xs font-mono uppercase tracking-widest text-aurum-light font-semibold mb-4">
               Explore Portal
             </h3>
-            <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-xs">
+            <div className="grid grid-cols-2 gap-y-2.5 gap-x-4 text-xs text-slate-300">
               <Link href="/tools.html" className="hover:text-white transition-colors">
                 Calculators Hub
               </Link>
@@ -135,7 +129,7 @@ export function Footer({ onOpenBooking }: FooterProps) {
               <Link href="/contact.html" className="hover:text-white transition-colors">
                 Contact Directory
               </Link>
-              <Link href="/compliance.html" className="hover:text-gold transition-colors font-medium">
+              <Link href="/compliance.html" className="hover:text-aurum-light transition-colors font-medium">
                 Disclosures & Privacy
               </Link>
             </div>
@@ -143,18 +137,18 @@ export function Footer({ onOpenBooking }: FooterProps) {
 
           {/* Regulatory Governance (3 cols) */}
           <div className="md:col-span-3 space-y-3">
-            <h3 className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
+            <h3 className="text-xs font-mono uppercase tracking-widest text-aurum-light font-semibold">
               Regulatory Minimums
             </h3>
-            <div className="p-3.5 rounded-lg bg-navy/60 border border-navy-border text-xs space-y-2">
-              <p className="text-copy-primary font-medium">
+            <div className="p-3.5 rounded bg-charcoal border border-hairline-dark text-xs space-y-2">
+              <p className="text-white font-medium">
                 {COMPLIANCE_DISCLOSURES.regulatoryMinimums}
               </p>
-              <p className="text-[11px] text-copy-muted leading-relaxed">
-                Distributed through formal tie-ups with SEBI-registered portfolio and alternative fund managers.
+              <p className="text-[11px] text-slate-400 leading-relaxed">
+                Distributed through formal tie-ups with SEBI-registered portfolio managers and alternative investment fund trustees.
               </p>
             </div>
-            <div className="text-[11px] font-mono text-copy-muted space-y-1">
+            <div className="text-[11px] font-mono text-slate-400 space-y-1">
               <p>AMFI Reg: {COMPLIANCE_DISCLOSURES.registrationDetails.amfiArn}</p>
               <p>SEBI Partners: {COMPLIANCE_DISCLOSURES.registrationDetails.sebiPartners}</p>
             </div>
@@ -162,34 +156,34 @@ export function Footer({ onOpenBooking }: FooterProps) {
         </div>
 
         {/* Full Mandatory Regulatory Disclaimer */}
-        <div className="pt-8 border-t border-navy-border/60 space-y-3">
-          <div className="flex items-start gap-2.5 text-xs text-copy-muted leading-relaxed">
-            <ShieldAlert className="w-4 h-4 text-gold/80 flex-shrink-0 mt-0.5" />
+        <div className="pt-8 border-t border-hairline-dark/80 space-y-3">
+          <div className="flex items-start gap-2.5 text-xs text-slate-400 leading-relaxed">
+            <ShieldAlert className="w-4 h-4 text-aurum-light flex-shrink-0 mt-0.5" />
             <p>
               {COMPLIANCE_DISCLOSURES.mainDisclaimer}
             </p>
           </div>
-          <p className="text-[11px] text-copy-muted leading-relaxed pl-6">
+          <p className="text-[11px] text-slate-500 leading-relaxed pl-6">
             {COMPLIANCE_DISCLOSURES.intermediaryNote}
           </p>
         </div>
 
         {/* Bottom Legal & Copyright Bar */}
-        <div className="pt-6 border-t border-navy-border/40 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-copy-muted">
+        <div className="pt-6 border-t border-hairline-dark/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
             © {SITE_METADATA.copyrightYear} {SITE_METADATA.companyName}. All rights reserved.
           </div>
 
           <div className="flex items-center gap-6">
-            <Link href="/compliance.html" className="hover:text-gold transition-colors">
+            <Link href="/compliance.html" className="hover:text-slate-300 transition-colors">
               Disclaimers & Disclosures
             </Link>
             <span>•</span>
-            <Link href="/compliance.html" className="hover:text-gold transition-colors">
+            <Link href="/compliance.html" className="hover:text-slate-300 transition-colors">
               Privacy Policy
             </Link>
             <span>•</span>
-            <Link href="/contact.html" className="hover:text-gold transition-colors">
+            <Link href="/contact.html" className="hover:text-slate-300 transition-colors">
               Grievance Redressal
             </Link>
           </div>

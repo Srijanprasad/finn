@@ -23,7 +23,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-obsidian text-copy-primary selection:bg-gold/30 selection:text-gold-light">
+    <div className="min-h-screen flex flex-col bg-alabaster text-ink-primary selection:bg-aurum/20 selection:text-aurum-dark">
       {/* Sticky Navigation with Mega-Menu */}
       <Navbar onOpenBooking={handleOpenBooking} />
 

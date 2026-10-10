@@ -9,32 +9,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: {
-          DEFAULT: "#0A0F1D",
-          deep: "#060A14",
+        // High-net-worth Institutional Editorial Palette
+        alabaster: {
+          DEFAULT: "#FAF8F5",
+          warm: "#F5F2EB",
+          card: "#FFFFFF",
         },
-        navy: {
-          DEFAULT: "#0F172A",
-          dark: "#0C1322",
-          surface: "#162035",
-          border: "#24324D",
+        parchment: "#F2EEE6",
+        charcoal: {
+          DEFAULT: "#151821",
+          soft: "#202534",
+          light: "#2B3245",
+          deep: "#0B0E17",
         },
-        gold: {
-          DEFAULT: "#C5A059",
-          hover: "#D4AF37",
-          light: "#E5C76D",
-          dark: "#9E7B35",
-          muted: "rgba(197, 160, 89, 0.15)",
+        nocturne: {
+          DEFAULT: "#0D131F",
+          surface: "#141C2B",
+          border: "#222C3F",
         },
-        copy: {
-          primary: "#E8ECF4",
-          secondary: "#9AA7BD",
-          muted: "#6B7A94",
+        aurum: {
+          DEFAULT: "#A88238",
+          light: "#BF9748",
+          hover: "#CFA754",
+          dark: "#846322",
+          muted: "rgba(168, 130, 56, 0.12)",
+        },
+        ink: {
+          primary: "#141720",
+          secondary: "#525A6C",
+          muted: "#7E8799",
+        },
+        hairline: {
+          light: "#E4DFD5",
+          medium: "#D5CEBF",
+          dark: "#232D3F",
         },
         chart: {
-          compounding: "#C5A059",
-          delay: "#5B7DB1",
-          cashDrag: "#B4533F",
+          disciplined: "#A88238",
+          delay: "#4B729F",
+          cashDrag: "#B64E3A",
         },
       },
       fontFamily: {
@@ -43,19 +56,15 @@ const config: Config = {
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       borderRadius: {
-        card: "12px",
-        control: "8px",
+        card: "4px", // Editorial architectural radius: sharp, disciplined, not bubbly
+        control: "4px",
         badge: "999px",
       },
       boxShadow: {
-        card: "0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(36, 50, 77, 0.6)",
-        "card-hover": "0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(197, 160, 89, 0.4)",
-        "gold-glow": "0 0 25px rgba(197, 160, 89, 0.25)",
-      },
-      backgroundImage: {
-        "brushed-gold": "linear-gradient(135deg, #C5A059 0%, #E5C76D 48%, #B89243 100%)",
-        "brushed-gold-hover": "linear-gradient(135deg, #D4AF37 0%, #F0D488 48%, #C5A059 100%)",
-        "card-gradient": "linear-gradient(145deg, rgba(22, 32, 53, 0.90) 0%, rgba(15, 23, 42, 0.92) 100%)",
+        subtle: "0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03)",
+        editorial: "0 10px 30px -10px rgba(14, 20, 32, 0.08)",
+        floating: "0 20px 45px -15px rgba(14, 20, 32, 0.14)",
+        darkCard: "0 10px 30px -10px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(35, 45, 63, 0.8)",
       },
     },
   },

@@ -83,6 +83,10 @@ export const SITE_METADATA = {
   tagline: "Evidence-led wealth management: mutual funds to PMS & AIF. Serving investors across India.",
   philosophy: "Wealth is built by behaviour, not brilliance.",
   copyrightYear: "2026",
+  logoUrl: "/assets/Logo-transparent.png",
+  logoOriginalUrl: "/assets/Logo.png",
+  logoLightUrl: "/assets/Logo-white.png",
+  logoIconUrl: "/assets/logo-icon.png",
 };
 
 export const NAVIGATION_DATA: NavItem[] = [

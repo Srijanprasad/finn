@@ -25,16 +25,25 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Prospar Consulting LLP: Evidence-led wealth management",
+    title: "Prospar Consulting LLP | Evidence-led wealth management",
     description:
-      "Wealth is built by behaviour, not brilliance. Planning tools, data-backed insights, and a graduated path from mutual funds to PMS & AIF.",
+      "Wealth is built by behaviour, not brilliance. Goal-based planning, disciplined mutual fund portfolios, and PMS & AIF access for qualified investors.",
     url: "https://consultprospar.com/",
     siteName: "Prospar Consulting LLP",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/assets/Logo.png",
+        width: 1230,
+        height: 318,
+        alt: "Prospar Consulting LLP Logo",
+      },
+    ],
   },
   icons: {
-    icon: "/assets/prospar-logo.svg",
+    icon: "/assets/logo-icon.png",
+    apple: "/assets/logo-icon.png",
   },
 };
 
@@ -46,12 +55,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sans.variable} ${serif.variable} scroll-smooth`}>
       <head>
-        <link rel="icon" type="image/svg+xml" href="/assets/prospar-logo.svg" />
+        <link rel="icon" type="image/png" href="/assets/logo-icon.png" />
+        <link rel="apple-touch-icon" href="/assets/logo-icon.png" />
       </head>
-      <body className="bg-obsidian text-copy-primary font-sans antialiased selection:bg-gold/30 selection:text-gold-light min-h-screen">
+      <body className="bg-alabaster text-ink-primary font-sans antialiased selection:bg-aurum/20 selection:text-aurum-dark min-h-screen">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-gold focus:text-obsidian focus:font-semibold focus:rounded-control focus:shadow-lg focus:outline-none"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-aurum focus:text-white focus:font-semibold focus:rounded-control focus:shadow-lg focus:outline-none"
         >
           Skip to main content
         </a>

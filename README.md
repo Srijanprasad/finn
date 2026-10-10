@@ -160,10 +160,14 @@ The following registration IDs and partner disclosures in `lib/content.ts` are m
 │   └── content.ts           # Centralized source of truth for copy, statistics, tax notes & URLs
 ├── public/
 │   └── assets/
-│       └── prospar-logo.svg # Official Prospar Consulting LLP SVG brand mark
+│       ├── Logo.png             # Official authentic Prospar Consulting LLP brand identity
+│       ├── Logo-transparent.png # High-resolution transparent charcoal variant
+│       ├── Logo-white.png       # Crisp ivory/white variant for dark surfaces
+│       ├── logo-icon.png        # Square radiant sunburst icon for favicon and app icons
+│       └── logo-icon-light.png  # White sunburst icon variant
 ├── tests/
 │   └── calc.test.ts         # Automated unit test suite for calculation engine
-├── tailwind.config.ts       # Design system tokens (Obsidian Slate, Champagne Gold, Navy)
+├── tailwind.config.ts       # Design system tokens (Alabaster, Nocturne, Aurum Bronze, Hairline rules)
 ├── postcss.config.mjs       # PostCSS processor configuration
 └── tsconfig.json            # Strict TypeScript configuration with @/ alias
 ```
